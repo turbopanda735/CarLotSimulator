@@ -8,8 +8,9 @@ namespace CarLotSimulator
         static void Main()
         {
             //DONE
-            List<Car> carList = new List<Car>();
-            CarLot carLot = new CarLot(carList);
+            var carList = new List<Car>();
+            var carLot = new CarLot(carList);
+            var testCarLot = new CarLot();
 
             //Create a seperate class file called Car
             //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
@@ -24,7 +25,7 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
             
-            Car myCar = new Car()
+            var myCar = new Car()
             {
                 Year = 2023,
                 Make = "Subaru",
@@ -32,6 +33,7 @@ namespace CarLotSimulator
                 IsDriveable = true,
             };
             carLot.NewCar(myCar, carList);
+            testCarLot.MyCarLot.Add(myCar);
 
             var dreamCar = new Car();
             dreamCar.Year = 2030;
@@ -39,6 +41,7 @@ namespace CarLotSimulator
             dreamCar.Model = "Fart Car";
             dreamCar.IsDriveable = true;
             carLot.NewCar(dreamCar, carList);
+            testCarLot.MyCarLot.Add(myCar);
 
             dreamCar.ChangeHonkNoise("toot toot");
             Console.WriteLine("my car go...");
@@ -46,6 +49,7 @@ namespace CarLotSimulator
 
             var thirdCar = new Car(2001, "Toyota", "Corolla", false);
             carLot.NewCar(thirdCar, carList);
+            testCarLot.MyCarLot.Add(myCar);
 
             thirdCar.ChangeEngineNoise("clunk clunk clunk");
             thirdCar.ChangeHonkNoise("AWOOGA AWOOGA");
@@ -56,6 +60,7 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
             carLot.LotInventory(carLot.MyCarLot);
+            testCarLot.LotInventory(testCarLot.MyCarLot);
         }
     }
 }

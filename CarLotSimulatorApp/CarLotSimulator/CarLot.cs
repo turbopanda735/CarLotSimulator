@@ -11,7 +11,7 @@ namespace CarLotSimulator
         {
             MyCarLot = myCarLot;
         }
-        public List<Car> MyCarLot { get; set; }
+        public List<Car> MyCarLot { get; set; } = new List<Car>();
         public void LotInventory(List<Car> carLot)
         {
             foreach (Car car in carLot)
