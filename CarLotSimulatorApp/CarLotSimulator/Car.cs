@@ -17,7 +17,7 @@ namespace CarLotSimulator
         //Create a seperate class file called Car
         public string EngineNoise = "vroom vroom";
         public string HonkNoise = "honk honk";
-        //EngineNoise and HonkNoise have default values because all cars go vroom vroom and honk honk
+        //EngineNoise and HonkNoise are fields because all cars go vroom vroom and honk honk
 
         //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
 

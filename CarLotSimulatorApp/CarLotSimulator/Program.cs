@@ -8,8 +8,6 @@ namespace CarLotSimulator
         static void Main()
         {
             //DONE
-            var carList = new List<Car>();
-            var carLot = new CarLot(carList);
             var testCarLot = new CarLot();
 
             //Create a seperate class file called Car
@@ -32,24 +30,23 @@ namespace CarLotSimulator
                 Model = "Forester",
                 IsDriveable = true,
             };
-            carLot.NewCar(myCar, carList);
-            testCarLot.MyCarLot.Add(myCar);
+            testCarLot.NewCar(myCar);
+            testCarLot.LotInventory();
 
             var dreamCar = new Car();
             dreamCar.Year = 2030;
             dreamCar.Model = "Subaru";
             dreamCar.Model = "Fart Car";
             dreamCar.IsDriveable = true;
-            carLot.NewCar(dreamCar, carList);
-            testCarLot.MyCarLot.Add(myCar);
+            testCarLot.NewCar(dreamCar);
 
             dreamCar.ChangeHonkNoise("toot toot");
             Console.WriteLine("my car go...");
             dreamCar.MakeHonkNoise();
+            testCarLot.LotInventory();
 
             var thirdCar = new Car(2001, "Toyota", "Corolla", false);
-            carLot.NewCar(thirdCar, carList);
-            testCarLot.MyCarLot.Add(myCar);
+            testCarLot.NewCar(thirdCar);
 
             thirdCar.ChangeEngineNoise("clunk clunk clunk");
             thirdCar.ChangeHonkNoise("AWOOGA AWOOGA");
@@ -59,8 +56,7 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
-            carLot.LotInventory(carLot.MyCarLot);
-            testCarLot.LotInventory(testCarLot.MyCarLot);
+            testCarLot.LotInventory();
         }
     }
 }

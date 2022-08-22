@@ -6,21 +6,23 @@ namespace CarLotSimulator
 {
     class CarLot
     {
-        public CarLot() { }
-        public CarLot(List<Car> myCarLot)
+        public static int NumberOfCars = 0;
+        public List<Car> MyCarLot = new List<Car>();
+        public void LotInventory()
         {
-            MyCarLot = myCarLot;
-        }
-        public List<Car> MyCarLot { get; set; } = new List<Car>();
-        public void LotInventory(List<Car> carLot)
-        {
-            foreach (Car car in carLot)
+            foreach (Car car in MyCarLot)
                 Console.WriteLine($"This driveable ?{car.IsDriveable}? {car.Year} {car.Make} {car.Model} goes {car.EngineNoise} when it starts and {car.HonkNoise} when they're cut off in traffic.");
+            if (NumberOfCars == 0)
+                Console.WriteLine($"There are no cars in this car lot.");
+            if (NumberOfCars == 1)
+                Console.WriteLine($"There is one car in this car lot.");
+            if (NumberOfCars > 1) 
+                Console.WriteLine($"There are {NumberOfCars} cars in this car lot.");
         }
-        public List<Car> NewCar(Car car, List<Car> cars)
+        public void NewCar(Car car)
         {
-            cars.Add(car);
-            return cars;
+            MyCarLot.Add(car);
+            NumberOfCars++;
         }
     }
 }
