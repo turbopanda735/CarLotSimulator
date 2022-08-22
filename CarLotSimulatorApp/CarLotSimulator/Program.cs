@@ -22,7 +22,8 @@ namespace CarLotSimulator
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
-            
+            testCarLot.LotInventory();
+
             var myCar = new Car()
             {
                 Year = 2023,
